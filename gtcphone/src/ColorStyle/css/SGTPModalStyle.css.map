@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAkCI,AA7BA,gBA6BgB,CA7BhB,aAAa,AAAC,CACV,UAAU,CAH6C,OAAkB,CAGnD,UAAU,CAChC,SAAS,CAJgI,IAAI,CAIxH,UAAU,CAC/B,KAAK,CALmN,IAAY,CAKnN,UAAU,CAC9B,AAyBD,AAxBA,gBAwBgB,CAxBhB,WAAW,AAAC,CACR,UAAU,CAR8E,IAAI,CAQtE,UAAU,CAChC,SAAS,CATyJ,IAAI,CASjJ,UAAU,CAC/B,KAAK,CAVqP,IAAY,CAUrP,UAAU,CAC9B,AAoBD,AAnBA,gBAmBgB,CAnBhB,aAAa,AAAC,CACV,UAAU,CAbmG,IAAI,CAa3F,UAAU,CAChC,SAAS,CAdoL,GAAG,CAc3K,UAAU,CAC/B,KAAK,CAfyR,IAAY,CAezR,UAAU,CAC9B",
+    "sources": [
+        "../scss/SCSS_component/SGTPModalStyle.scss",
+        "../scss/styleconfig.scss"
+    ],
+    "names": [],
+    "file": "SGTPModalStyle.css"
+}

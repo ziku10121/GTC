@@ -1,0 +1,56 @@
+@import '../styleconfig.scss';
+//特規設定
+$BorderStyle-config-special:( 
+    default:( 
+        class:'default', 
+        color:rgb(164, 160, 172), 
+    ), 
+    fubon:( 
+        class:'fubon', 
+        color:rgb(164, 160, 172), 
+    ), 
+);
+
+//通用邊界設定
+$BorderStyle-config-Universal:( 
+    START:( //啟動
+        class:'start', 
+        color:#157347, 
+    ), 
+    SENT:( //已送出 
+        class:'sent', 
+        color:#0d6bf5, 
+    ), 
+    PAUSE:( //暫停
+        class:'pause', 
+        color:#f7bb07, 
+    ), 
+    END:( //結案
+        class:'end', 
+        color:#697179, 
+    )
+);
+@mixin BorderStyleSet($color) {
+    border-width: 3px;
+    border-color: $color!important;
+}
+
+@each $name,
+$value in $BorderStyle-config-special {
+    $class: map-get($value, class);
+    $color: map-get($value, color);
+    @if $class==$StyleCTR {
+        .SGTP-BorderStyle {
+            @include BorderStyleSet($color);
+        }
+    }
+}
+
+@each $name,
+$value in $BorderStyle-config-Universal {
+    $class: map-get($value, class);
+    $color: map-get($value, color);
+    .SGTP-BorderStyle-#{$class} {
+        @include BorderStyleSet($color);
+    }
+}

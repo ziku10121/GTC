@@ -1,0 +1,38 @@
+@import '../styleconfig.scss';
+$CardStyle-config:( default:( class:'default', CardHeader-bg:#FFF, CardBody-bg:#FFF, CardFooter-bg:#FFF, CardHeader-fontsize: 15px, CardBody-fontsize:16px, CardFooter-fontsize:13px, CardHeader-fontcolor:rgb(0, 0, 0), CardBody-fontcolor:rgb(0, 0, 0), CardFooter-fontcolor:rgb(0, 0, 0), ), fubon:( class:'fubon', CardHeader-bg:#FFF, CardBody-bg:#FFF, CardFooter-bg:#FFF, CardHeader-fontsize:16px, CardBody-fontsize:12px, CardFooter-fontsize:5px, CardHeader-fontcolor:#FFF, CardBody-fontcolor:#FFF, CardFooter-fontcolor:#FFF, ));
+@mixin CardStyleSet( $CardH-bg, $CardB-bg, $CardF-bg, $CardH-fs, $CardB-fs, $CardF-fs, $CardH-fc, $CardB-fc, $CardF-fc) {
+    .card-header {
+        background: $CardH-bg;
+        font-size: $CardH-fs!important;
+        color: $CardH-fc!important;
+    }
+    .card-body {
+        background: $CardB-bg!important;
+        font-size: $CardB-fs!important;
+        color: $CardB-fc!important;
+    }
+    .card-footer {
+        background: $CardF-bg;
+        font-size: $CardF-fs!important;
+        color: $CardF-fc!important;
+    }
+}
+
+@each $name,
+$value in $CardStyle-config {
+    $class: map-get($value, class);
+    $CardH-bg: map-get($value, CardHeader-bg);
+    $CardB-bg: map-get($value, CardBody-bg);
+    $CardF-bg: map-get($value, CardFooter-bg);
+    $CardH-fs: map-get($value, CardHeader-fontsize);
+    $CardB-fs: map-get($value, CardBody-fontsize);
+    $CardF-fs: map-get($value, CardFooter-fontsize);
+    $CardH-fc: map-get($value, CardHeader-fontcolor);
+    $CardB-fc: map-get($value, CardBody-fontcolor);
+    $CardF-fc: map-get($value, CardFooter-fontcolor);
+    .SGTP-CardStyle {
+        @if $class==$StyleCTR {
+            @include CardStyleSet( $CardH-bg, $CardB-bg, $CardF-bg, $CardH-fs, $CardB-fs, $CardF-fs, $CardH-fc, $CardB-fc, $CardF-fc);
+        }
+    }
+}

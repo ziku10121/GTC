@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AA0BI,AArBA,oBAqBoB,CArBpB,iBAAiB,AAAC,CACd,UAAU,CAHqD,IAAI,CAGzC,UAAU,CACpC,SAAS,CAJ6G,IAAI,CAIjG,UAAU,CACnC,KAAK,CAL8K,IAAY,CAK1K,UAAU,CAClC,AAiBD,AAhBA,oBAgBoB,CAhBpB,eAAe,AAAC,CACZ,UAAU,CAR4E,IAAI,CAQhE,UAAU,CACpC,SAAS,CAT0I,IAAI,CAS9H,UAAU,CACnC,KAAK,CAVoN,IAAY,CAUhN,UAAU,CAClC",
+    "sources": [
+        "../scss/SCSS_component/SGTPOffcanvas.scss",
+        "../scss/styleconfig.scss"
+    ],
+    "names": [],
+    "file": "SGTPOffcanvas.css"
+}

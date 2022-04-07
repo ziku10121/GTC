@@ -1,0 +1,40 @@
+//SGTPModalStyle.scss
+@import '../styleconfig.scss';
+//彈跳視窗
+$ModalStyle-config:( default:( class:'default', ModalHeader-bg:rgb(250, 250, 250), ModalBody-bg:#FFF, ModalFooter-bg:#FFF, ModalHeader-fontsize: 16px, ModalBody-fontsize:16px, ModalFooter-fontsize:5px, ModalHeader-fontcolor:rgb(0, 0, 0), ModalBody-fontcolor:rgb(0, 0, 0), ModalFooter-fontcolor:rgb(0, 0, 0), ), fubon:( class:'fubon', ModalHeader-bg:#FFF, ModalBody-bg:#FFF, ModalFooter-bg:#FFF, ModalHeader-fontsize: 16px, ModalBody-fontsize:12px, ModalFooter-fontsize:5px, ModalHeader-fontcolor:rgb(0, 0, 0), ModalBody-fontcolor:rgb(0, 0, 0), ModalFooter-fontcolor:rgb(0, 0, 0), ));
+@mixin ModalStyleSet( $ModalH-bg, $ModalB-bg, $ModalF-bg, $ModalH-fs, $ModalB-fs, $ModalF-fs, $ModalH-fc, $ModalB-fc, $ModalF-fc) {
+    .modal-header {
+        background: $ModalH-bg!important;
+        font-size: $ModalH-fs!important;
+        color: $ModalH-fc!important;
+    }
+    .modal-body {
+        background: $ModalB-bg!important;
+        font-size: $ModalB-fs!important;
+        color: $ModalB-fc!important;
+    }
+    .modal-footer {
+        background: $ModalF-bg!important;
+        font-size: $ModalF-fs!important;
+        color: $ModalF-fc!important;
+    }
+}
+
+@each $name,
+$value in $ModalStyle-config {
+    $class: map-get($value, class);
+    $ModalH-bg: map-get($value, ModalHeader-bg);
+    $ModalB-bg: map-get($value, ModalBody-bg);
+    $ModalF-bg: map-get($value, ModalFooter-bg);
+    $ModalH-fs: map-get($value, ModalHeader-fontsize);
+    $ModalB-fs: map-get($value, ModalBody-fontsize);
+    $ModalF-fs: map-get($value, ModalFooter-fontsize);
+    $ModalH-fc: map-get($value, ModalHeader-fontcolor);
+    $ModalB-fc: map-get($value, ModalBody-fontcolor);
+    $ModalF-fc: map-get($value, ModalFooter-fontcolor);
+    .SGTP-ModalStyle {
+        @if $class==$StyleCTR {
+            @include ModalStyleSet( $ModalH-bg, $ModalB-bg, $ModalF-bg, $ModalH-fs, $ModalB-fs, $ModalF-fs, $ModalH-fc, $ModalB-fc, $ModalF-fc);
+        }
+    }
+}

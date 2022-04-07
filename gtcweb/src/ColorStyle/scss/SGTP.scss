@@ -1,0 +1,32 @@
+@import './SCSS_component/SGTPBorderStyle.scss';
+@import './SCSS_component/SGTPButtonStyle.scss';
+@import './SCSS_component/SGTPCardStyle.scss';
+@import './SCSS_component/SGTPModalStyle.scss';
+@import './SCSS_component/SGTPNavStyle.scss';
+@import './SCSS_component/SGTPOffcanvas.scss';
+@import './SCSS_component/SGTPOtherStyle.scss';
+@import './SCSS_component/SGTPTableStyle.scss';
+// ---------------------------------------------------------------
+// 畫面主顏色
+$MainStyle-config:( 
+    default:( class:'default', bg:#e74b4b, fontfamily:(Avenir, Helvetica, Arial, sans-serif), ),
+    fubon:( class:'fubon', bg:white, fontfamily:(Avenir, Helvetica, Arial, sans-serif), )
+);
+@mixin MainStyleSet($bg, $fontfamily) {
+    background-color: $bg;
+    font-family: $fontfamily;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@each $name,
+$value in $MainStyle-config {
+    $class: map-get( $value, class);
+    $bg: map-get($value, bg);
+    $fontfamily: map-get( $value, fontfamily);
+    @if $class==$StyleCTR {
+        body {
+            @include MainStyleSet($bg, $fontfamily);
+        }
+    }
+}

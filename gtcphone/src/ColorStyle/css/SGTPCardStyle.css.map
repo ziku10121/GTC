@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAgCI,AA7BA,eA6Be,CA7Bf,YAAY,AAAC,CACT,UAAU,CAH2C,IAAI,CAIzD,SAAS,CAJ6G,IAAI,CAItG,UAAU,CAC9B,KAAK,CAL8L,IAAY,CAK/L,UAAU,CAC7B,AAyBD,AAxBA,eAwBe,CAxBf,UAAU,AAAC,CACP,UAAU,CAR6D,IAAI,CAQtD,UAAU,CAC/B,SAAS,CATqI,IAAI,CAS9H,UAAU,CAC9B,KAAK,CAV+N,IAAY,CAUhO,UAAU,CAC7B,AAoBD,AAnBA,eAmBe,CAnBf,YAAY,AAAC,CACT,UAAU,CAbiF,IAAI,CAc/F,SAAS,CAd+J,IAAI,CAcxJ,UAAU,CAC9B,KAAK,CAfkQ,IAAY,CAenQ,UAAU,CAC7B",
+    "sources": [
+        "../scss/SCSS_component/SGTPCardStyle.scss",
+        "../scss/styleconfig.scss"
+    ],
+    "names": [],
+    "file": "SGTPCardStyle.css"
+}

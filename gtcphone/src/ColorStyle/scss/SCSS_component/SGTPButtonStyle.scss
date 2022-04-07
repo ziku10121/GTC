@@ -1,0 +1,53 @@
+@import '../styleconfig.scss';
+//特規設定
+$ButtonStyle-config-special:( default:( class:'default', bg:rgb(164, 160, 172), font-Size:16px, font-Color:rgb(0, 0, 0)), fubon:( class:'fubon', bg:rgb(164, 160, 172), font-Size:16px, font-Color:rgb(0, 0, 0)), );
+//通用按鈕設定
+$ButtonStyle-config-Universal:( 
+    confirm:( 
+        class:'confirm', 
+        bg:#157347, 
+        font-Size:16px, 
+        font-Color:rgb(255, 255, 255)
+    ), 
+    cancel:( 
+        class:'cancel', 
+        bg:#bb2d3b, 
+        font-Size:16px, 
+        font-Color:rgb(255, 255, 255)
+    ),
+    pause:(
+        class:'pause', 
+        bg:#f7bb07, 
+        font-Size:16px, 
+        font-Color:rgb(255, 255, 255)
+    )
+);
+@mixin ButtonStyleSet($background, $fontsize, $fontcolor) {
+    background-color: $background !important;
+    font-size: $fontsize!important;
+    color: $fontcolor!important;
+}
+
+@each $name,
+$value in $ButtonStyle-config-special {
+    $class: map-get($value, class);
+    $bg: map-get($value, bg);
+    $fontsize: map-get($value, font-Size);
+    $fontcolor: map-get( $value, font-Color);
+    @if $class==$StyleCTR {
+        .SGTP-BtnStyle {
+            @include ButtonStyleSet($bg, $fontsize, $fontcolor);
+        }
+    }
+}
+
+@each $name,
+$value in $ButtonStyle-config-Universal {
+    $class: map-get($value, class);
+    $bg: map-get($value, bg);
+    $fontsize: map-get($value, font-Size);
+    $fontcolor: map-get( $value, font-Color);
+    .SGTP-BtnStyle-#{$class} {
+        @include ButtonStyleSet($bg, $fontsize, $fontcolor);
+    }
+}

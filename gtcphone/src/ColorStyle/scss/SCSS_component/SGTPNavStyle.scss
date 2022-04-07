@@ -1,0 +1,29 @@
+@import '../styleconfig.scss';
+$NavStyle-config:( default:( class:'default', bg:#FFF, main-font-Size:20px, sub-font-Size:16px, font-Color:rgb(0, 0, 0)), fubon:( class:'fubon', bg:rgb(164, 160, 172), main-font-Size:20px, sub-font-Size:10px, font-Color:rgb(164, 160, 172)));
+@mixin NavStyleSet($background, $mainfontsize, $subfontsize, $fontcolor) {
+    background-color: $background !important;
+    .navbar-brand {
+        color: $fontcolor!important;
+        font-size: $mainfontsize!important;
+    }
+    .navbar-nav {
+        .nav-link {
+            color: $fontcolor!important;
+            font-size: $subfontsize!important;
+        }
+    }
+}
+
+@each $name,
+$value in $NavStyle-config {
+    $class: map-get($value, class);
+    $bg: map-get($value, bg);
+    $mainfontsize: map-get( $value, main-font-Size);
+    $subfontsize: map-get( $value, sub-font-Size);
+    $fontcolor: map-get( $value, font-Color);
+    .SGTP-NavStyle {
+        @if $class==$StyleCTR {
+            @include NavStyleSet($bg, $mainfontsize, $subfontsize, $fontcolor);
+        }
+    }
+}

@@ -1,0 +1,47 @@
+// SGTPTTableStyle.scss
+@import '../styleconfig.scss';
+$TableStyle-config:( default:( class:'default', caption-bg:transparent, caption-fontsize:15px, caption-fontcolor:black, thead-bg:#ffffff, tbody-bg:#FFFFFF, tfoot-bg:#FFFFFF, thead-fontsize:15px, tbody-fontsize:15px, tfoot-fontsize:15px, thead-fontcolor:black, tbody-fontcolor:black, tfoot-fontcolor:black, ), fubon:( class:'fubon', caption-bg:transparent, caption-fontsize:5px, caption-fontcolor:black, thead-bg:#FFFFFF, tbody-bg:#FFFFFF, tfoot-bg:#FFFFFF, thead-fontsize:5px, tbody-fontsize:5px, tfoot-fontsize:5px, thead-fontcolor:black, tbody-fontcolor:black, tfoot-fontcolor:black, ));
+@mixin TableStyleSet( $caption-bg-input, $caption-fontsize-input, $caption-fontcolor-input, $thead-bg-input, $thead-fontsize-input, $thead-fontcolor-input, $tbody-bg-input, $tbody-fontsize-input, $tbody-fontcolor-input, $tfoot-bg-input, $tfoot-fontsize-input, $tfoot-fontcolor-input, ) {
+    caption {
+        background-color: $caption-bg-input!important;
+        color: $caption-fontcolor-input!important;
+        font-size: $caption-fontsize-input!important;
+    }
+    thead {
+        background-color: $thead-bg-input!important;
+        color: $thead-fontcolor-input!important;
+        font-size: $thead-fontsize-input!important;
+    }
+    tbody {
+        background-color: $tbody-bg-input!important;
+        color: $tbody-fontcolor-input!important;
+        font-size: $tbody-fontsize-input!important;
+    }
+    tfoot {
+        background-color: $tfoot-bg-input!important;
+        color: $tfoot-fontcolor-input!important;
+        font-size: $tfoot-fontsize-input!important;
+    }
+}
+
+@each $name,
+$value in $TableStyle-config {
+    $class: map-get($value, class);
+    $caption-bg: map-get($value, caption-bg);
+    $caption-fontsize: map-get($value, caption-fontsize);
+    $caption-fontcolor: map-get($value, caption-fontcolor);
+    $thead-bg: map-get($value, thead-bg);
+    $tbody-bg: map-get($value, tbody-bg);
+    $tfoot-bg: map-get($value, tfoot-bg);
+    $thead-fontsize: map-get($value, thead-fontsize);
+    $tbody-fontsize: map-get($value, tbody-fontsize);
+    $tfoot-fontsize: map-get($value, tfoot-fontsize);
+    $thead-fontcolor: map-get($value, thead-fontcolor);
+    $tbody-fontcolor: map-get($value, tbody-fontcolor);
+    $tfoot-fontcolor: map-get($value, tfoot-fontcolor);
+    @if $class==$StyleCTR {
+        .SGTP-TableStyle {
+            @include TableStyleSet( $caption-bg, $caption-fontsize, $caption-fontcolor, $thead-bg, $thead-fontsize, $thead-fontcolor, $tbody-bg, $tbody-fontsize, $tbody-fontcolor, $tfoot-bg, $tfoot-fontsize, $tfoot-fontcolor);
+        }
+    }
+}

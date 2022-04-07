@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAmCQ,AAAA,qBAAqB,AAAC,CAhB1B,gBAAgB,CAbT,aAAW,CAagB,UAAU,CAkBvC,AAFD,AAfJ,qBAeyB,CAfzB,KAAK,AAAC,CACF,gBAAgB,CAdR,OAAO,CAef,SAAS,CAdA,IAAI,CAeb,KAAK,CAdK,IAAK,CAelB,AAmCG,AAAA,eAAe,AAAC,CAZpB,gBAAgB,CAJsC,IAAO,CAK7D,SAAS,CAL+D,IAAI,CAM5E,KAAK,CANmF,IAAK,CAkBxF,AAUL,AAAA,wBAAwB,AAAE,CAxB1B,gBAAgB,CAFY,OAAO,CAGnC,SAAS,CAHqC,IAAI,CAIlD,KAAK,CAJyD,OAAO,CA4BpE",
+    "sources": [
+        "../scss/SCSS_component/SGTPOtherStyle.scss",
+        "../scss/styleconfig.scss"
+    ],
+    "names": [],
+    "file": "SGTPOtherStyle.css"
+}

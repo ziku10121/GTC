@@ -1,0 +1,32 @@
+// SGTPOffcanvas.scss
+@import '../styleconfig.scss';
+// 由下往上長的視窗
+$OffcanvasStyle-config:( default:( class:'default', OffcanvasHeader-bg:#FFF, OffcanvasBody-bg:#FFF, OffcanvasHeader-fontsize: 16px, OffcanvasBody-fontsize:12px, OffcanvasHeader-fontcolor:rgb(0, 0, 0), OffcanvasBody-fontcolor:rgb(0, 0, 0), ), fubon:( class:'fubon', OffcanvasHeader-bg:#FFF, OffcanvasBody-bg:#FFF, OffcanvasHeader-fontsize: 16px, OffcanvasBody-fontsize:12px, OffcanvasHeader-fontcolor:rgb(0, 0, 0), OffcanvasBody-fontcolor:rgb(0, 0, 0), ));
+@mixin OffcanvasStyleSet( $OffcanvasH-bg, $OffcanvasB-bg, $OffcanvasH-fs, $OffcanvasB-fs, $OffcanvasH-fc, $OffcanvasB-fc, ) {
+    .offcanvas-header {
+        background: $OffcanvasH-bg!important;
+        font-size: $OffcanvasH-fs!important;
+        color: $OffcanvasH-fc!important;
+    }
+    .offcanvas-body {
+        background: $OffcanvasB-bg!important;
+        font-size: $OffcanvasB-fs!important;
+        color: $OffcanvasB-fc!important;
+    }
+}
+
+@each $name,
+$value in $OffcanvasStyle-config {
+    $class: map-get($value, class);
+    $OffcanvasH-bg: map-get($value, OffcanvasHeader-bg);
+    $OffcanvasB-bg: map-get($value, OffcanvasBody-bg);
+    $OffcanvasH-fs: map-get($value, OffcanvasHeader-fontsize);
+    $OffcanvasB-fs: map-get($value, OffcanvasBody-fontsize);
+    $OffcanvasH-fc: map-get($value, OffcanvasHeader-fontcolor);
+    $OffcanvasB-fc: map-get($value, OffcanvasBody-fontcolor);
+    .SGTP-OffcanvasStyle {
+        @if $class==$StyleCTR {
+            @include OffcanvasStyleSet( $OffcanvasH-bg, $OffcanvasB-bg, $OffcanvasH-fs, $OffcanvasB-fs, $OffcanvasH-fc, $OffcanvasB-fc, );
+        }
+    }
+}

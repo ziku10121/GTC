@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAuBI,AAAA,cAAc,AAAC,CApBf,gBAAgB,CAF6B,IAAI,CAEnB,UAAU,CAwBvC,AAJD,AAnBA,cAmBc,CAnBd,aAAa,AAAC,CACV,KAAK,CAJ8F,IAAY,CAI9F,UAAU,CAC3B,SAAS,CALqD,IAAI,CAK1C,UAAU,CACrC,AAgBD,AAdI,cAcU,CAfd,WAAW,CACP,SAAS,AAAC,CACN,KAAK,CAT0F,IAAY,CAS1F,UAAU,CAC3B,SAAS,CAVqE,IAAI,CAU3D,UAAU,CACpC",
+    "sources": [
+        "../scss/SCSS_component/SGTPNavStyle.scss",
+        "../scss/styleconfig.scss"
+    ],
+    "names": [],
+    "file": "SGTPNavStyle.css"
+}

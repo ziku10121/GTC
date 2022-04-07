@@ -1,0 +1,77 @@
+//SGTPOtherStyle.scss
+@import '../styleconfig.scss';
+//搜尋區設定
+$SearchareaStyle-config:( 
+    default:( 
+        class:'default', 
+        bg:transparent, 
+        inputbg:#EBEBEB, 
+        fontsize:15px, 
+        fontcolor:black, 
+    ), 
+    fubon:( 
+        class:'fubon', 
+        bg:#f000a0, 
+        fontsize:15px, 
+        fontcolor:black, 
+    )
+);
+@mixin SearchareaStyleSet($backgroundinput, $inputbackgroundinput, $fontsizeinput, $fontcolorinput) {
+    background-color: $backgroundinput!important;
+    input {
+        background-color: $inputbackgroundinput;
+        font-size: $fontsizeinput;
+        color: $fontcolorinput;
+    }
+}
+
+@each $name,
+$value in $SearchareaStyle-config {
+    $class: map-get($value, class);
+    $bg: map-get($value, bg);
+    $inputbg: map-get($value, inputbg);
+    $fontsize: map-get($value, fontsize);
+    $fontcolor: map-get($value, fontcolor);
+    @if $class==$StyleCTR {
+        .SGTP-SearchareaStyle {
+            @include SearchareaStyleSet($bg, $inputbg, $fontsize, $fontcolor);
+        }
+    }
+}
+//搜尋區設定 結束
+
+//字體顏色
+$TextStyle-config-special:( default:( class:'default', bg:#CCCCCC, fontsize:15px, fontcolor:black, ), fubon:( class:'fubon', bg:#cccccc, fontsize:15px, fontcolor:black, ));
+$TextStyle-config-universal:( //固定在螢幕下面元件
+Tobottom:( class:'Tobottom', bg:#EBEBEB, fontsize:15px, fontcolor:#C4C4C4, ), );
+@mixin TextStyleSet($bg, $fontsize, $fontcolor) {
+    background-color: $bg;
+    font-size: $fontsize;
+    color: $fontcolor;
+}
+
+@each $name,
+$value in $TextStyle-config-special {
+    $class: map-get($value, class);
+    $bg: map-get($value, bg);
+    $fontsize: map-get($value, fontsize);
+    $fontcolor: map-get($value, fontcolor);
+    @if $class==$StyleCTR {
+        .SGTP-TextStyle {
+            @include TextStyleSet($bg, $fontsize, $fontcolor)
+        }
+    }
+}
+
+@each $name,
+$value in $TextStyle-config-universal {
+    $class: map-get($value, class);
+    $bg: map-get($value, bg);
+    $fontsize: map-get($value, fontsize);
+    $fontcolor: map-get($value, fontcolor);
+    .SGTP-TextStyle-#{$class} {
+        @include TextStyleSet($bg, $fontsize, $fontcolor)
+    }
+}
+
+//已經到底 結束
